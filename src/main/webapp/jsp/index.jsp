@@ -21,7 +21,9 @@
 			<th scope="col">FECHA TERMINO</th>
 			<th scope="col">HORAS</th>
 			<th scope="col">RUT EMPLEADO</th>
-			<th scope="col">CÃ“DIGO PROYECTO</th>
+			<th scope="col">CÓDIGO PROYECTO</th>
+			<th scope="col">PROYECTO</th>
+			<th scope="col">EMPRESA</th>
 		</thead>
 		<tbody>
 			<c:forEach items="${lista}" var="c">
@@ -39,10 +41,16 @@
 						<c:out value="${c.horas }"></c:out>
 					</td>
 					<td>
-						<c:out value="${c.empleado }"></c:out>
+						<c:out value="${c.empleado.rut }-${c.empleado.dv }"></c:out>
 					</td>
 					<td>
-						<c:out value="${c.proyecto }"></c:out>
+						<c:out value="${c.proyecto.codproyecto }"></c:out>
+					</td>
+					<td>
+						<c:out value="${c.proyecto.nomproyecto }"></c:out>
+					</td>
+					<td>
+						<c:out value="${c.empleado.empresa.razonsocial}"></c:out>
 					</td>
 				</tr>
 			</c:forEach>
