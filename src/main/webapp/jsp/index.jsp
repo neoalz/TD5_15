@@ -24,6 +24,7 @@
 			<th scope="col">CÓDIGO PROYECTO</th>
 			<th scope="col">PROYECTO</th>
 			<th scope="col">EMPRESA</th>
+			<th scope="col">SELECCIONAR ASIGNACIÓN</th>
 		</thead>
 		<tbody>
 			<c:forEach items="${lista}" var="c">
@@ -52,9 +53,26 @@
 					<td>
 						<c:out value="${c.empleado.empresa.razonsocial}"></c:out>
 					</td>
+					<td>
+						<form:form action="/editarAsignacion" method="post" modelAttribute="asignacion">
+							<form:input path="idasignacion" type="hidden" value="${c.idasignacion}"/>
+							<form:button class="btn btn-info">EDITAR</form:button>
+						
+						</form:form>
+					</td>
 				</tr>
 			</c:forEach>
+
 		</tbody>
 	</table>
+	<h3>Acciones</h3>
+	<div>
+		<!--  Ver proyectos -->
+		<form:form action="/proyectos" method="get" modelAttribute="proyecto">			
+				<form:button class="btn btn-info" id="buscarBoton">Ver Proyectos</form:button>
+		</form:form>
+		<a class="btn btn-primary" href="paginaAsignarProyecto" role="button">Asignar Proyecto</a>
+	</div>
+
 </body>
 </html>

@@ -33,4 +33,10 @@ public class ProyectoServiceImpl implements ProyectoService {
 		return repo.findById(codProyecto).get();
 
 	}
+
+	@Override
+	public void actualizarProyecto(Proyecto proyecto) {
+		// TODO Auto-generated method stub
+		repo.save(proyecto);
+	}
 }

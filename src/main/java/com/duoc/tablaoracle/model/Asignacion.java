@@ -2,6 +2,10 @@ package com.duoc.tablaoracle.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -19,9 +23,11 @@ public class Asignacion implements Serializable {
 	private long idasignacion;
 
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(iso = ISO.DATE)
 	private Date fecinicio;
 
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(iso = ISO.DATE)
 	private Date fectermino;
 
 	private BigDecimal horas;
