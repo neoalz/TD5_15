@@ -17,30 +17,36 @@
 	<table class="table">
 		<thead>
 			<th scope="col">ID ASIGNACION</th>
-			<th scope="col">orderDate</th>
-			<th scope="col">requiredDate</th>
-			<th scope="col">shippedDate</th>
-			<th scope="col">status</th>
-			<th scope="col">comments</th>
-			<th scope="col">Seleccionar orden</th>
-			
-			
+			<th scope="col">FECHA INICIO</th>
+			<th scope="col">FECHA TERMINO</th>
+			<th scope="col">HORAS</th>
+			<th scope="col">RUT EMPLEADO</th>
+			<th scope="col">CÓDIGO PROYECTO</th>
 		</thead>
 		<tbody>
 			<c:forEach items="${lista}" var="c">
-			
 				<tr>
 					<td>
 						<c:out value="${c.idasignacion }"></c:out>
 					</td>
-		
-					
-					
+					<td>
+						<c:out value="${c.fecinicio }"></c:out>
+					</td>
+					<td>
+						<c:out value="${c.fectermino }"></c:out>
+					</td>
+					<td>
+						<c:out value="${c.horas }"></c:out>
+					</td>
+					<td>
+						<c:out value="${c.empleado }"></c:out>
+					</td>
+					<td>
+						<c:out value="${c.proyecto }"></c:out>
+					</td>
 				</tr>
-			
 			</c:forEach>
 		</tbody>
 	</table>
-
 </body>
 </html>
